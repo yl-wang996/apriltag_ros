@@ -1,4 +1,5 @@
 # apriltag_ros
+This repository is merged from officail repo and the bundle calibration part from https://github.com/laujinseoi/apriltag_ros.git
 
 `apriltag_ros` is a Robot Operating System (ROS) wrapper of the [AprilTag 3 visual fiducial detector](https://april.eecs.umich.edu/software/apriltag.html). For details and tutorials, please see the [ROS wiki](http://wiki.ros.org/apriltag_ros).
 
@@ -13,8 +14,8 @@
 Starting with a working ROS installation (Kinetic and Melodic are supported):
 ```
 export ROS_DISTRO=melodic               # Set this to your distro, e.g. kinetic or melodic
-source /opt/ros/$ROS_DISTRO/setup.bash  # Source your ROS distro 
-mkdir -p ~/catkin_ws/src                # Make a new workspace 
+source /opt/ros/$ROS_DISTRO/setup.bash  # Source your ROS distro
+mkdir -p ~/catkin_ws/src                # Make a new workspace
 cd ~/catkin_ws/src                      # Navigate to the source space
 git clone https://github.com/AprilRobotics/apriltag.git      # Clone Apriltag library
 git clone https://github.com/AprilRobotics/apriltag_ros.git  # Clone Apriltag ROS wrapper
