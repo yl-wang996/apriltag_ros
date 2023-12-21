@@ -104,13 +104,13 @@ void tagDetectionCallback(const apriltag_ros::AprilTagDetectionArrayConstPtr &de
             for (int i = 0; i < mats.size(); ++i)
             {
                 Eigen::Affine3d a4d(mats[i]);
-                Eigen::Quaterniond q1(Eigen::Affine3d(mats[i]).rotation());
+                Eigen::Quaterniond q1 = Eigen::Quaterniond(Eigen::Affine3d(mats[i]).rotation());
                 for (int j = 0; j < mats.size(); ++j)
                 {
                     if (i == j)
                         continue;
 
-                    Eigen::Quaterniond q2(Eigen::Affine3d(mats[j]).rotation());
+                    Eigen::Quaterniond q2 = Eigen::Quaterniond((Eigen::Affine3d(mats[j]).rotation()));
                     auto q_error = quatmult(q1.inverse(), q2);
                     double q_error_w = std::min<double>(1.0, std::max<double>(q_error.w(), -1.0));
                     if (2 * std::acos(q_error_w) >= M_PI / 2.0)
